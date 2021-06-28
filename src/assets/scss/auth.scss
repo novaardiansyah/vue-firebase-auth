@@ -1,0 +1,48 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+@use 'sass:map';
+@use 'partials/variables'as v;
+@use 'partials/mixin' as m;
+@use 'partials/animations' as animate;
+
+@include m.google-fonts();
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 5vh auto;
+}
+
+.card-body  {
+	.card-title {
+	  font-family: 'Poppins', Sans-Serif;
+	  font-weight: 600;
+	}
+}
+
+[placeholder] {
+  font-size: .85rem;
+}
+
+p.small {
+  font-family: 'Open Sans', Sans-Serif;
+  line-height: 1.3rem;
+}
+
+.register__page p {
+  color: map-get(v.$colors, cl-dark);
+  
+  a {
+    cursor: pointer;
+	  transition: all .3s ease;
+	  
+	  &:hover {
+	    color: map-get(v.$colors, cl-light-blue) !important;
+	  }
+  }
+}
+
+.slide-enter-active {
+  @include animate.animate__slideInDown(1.5s);
+}
